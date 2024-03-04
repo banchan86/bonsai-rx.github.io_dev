@@ -22,7 +22,9 @@ jobs:
         uses: microsoft/setup-msbuild@v1
 
       - name: Setup DocFX
-        run: dotnet tool restore
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: install docfx
 
       - name: Build Documentation
         run: docfx docs/docfx.json
